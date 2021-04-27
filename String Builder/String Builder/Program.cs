@@ -63,17 +63,15 @@ public class BillBuilder
 	public static string buildbill(Bill bill)
 	{
 		Builder builder = new Builder();
-		string json = builder
-			.Opening()
-				.addinfo("\tUnit name: " + bill.unit + "\n\t")
-				.addinfo("Price: " + bill.price+ "\n\t")
-				.addinfo("Quantity: " + bill.quantity+ "\n\t")
-				.addinfo("Total: " + bill.total + "\n\t")
-				.addinfo("Paid Price: " + bill.paid)
-			.End()
-			.printBill();
+		string billFormat = builder
+		.Opening().addinfo("\tUnit name: " + bill.unit + "\n\t")
+		.addinfo("Price: " + bill.price+ "\n\t")
+		.addinfo("Quantity: " + bill.quantity+ "\n\t")
+		.addinfo("Total: " + bill.total + "\n\t")
+		.addinfo("Paid Price: " + bill.paid).End()
+		.printBill();
 
-		return json;
+		return billFormat;
 	}
 
 
